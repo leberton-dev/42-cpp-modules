@@ -22,6 +22,6 @@ fclean: clean
 re: fclean all
 
 test: all
-	@./test.sh
+	@../test/ex00.sh
 
 .PHONY: all clean fclean re test
