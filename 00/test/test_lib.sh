@@ -203,3 +203,16 @@ assert_stdin() {
 	fi
 	rm -f "$tmp"
 }
+
+# assert_log_diff <title> <log_file>
+assert_log_diff() {
+	title=$1
+	tmp=$(mktemp)
+	./"$NAME" > "$tmp" 2>&1
+	if diff <(cut -c 17- "$2") <(cut -c 17- "$tmp") >/dev/null 2>&1; then
+		_result ok "$title"
+	else
+		_result ko "$title" "$(diff <(cut -c 17- "$2") <(cut -c 17- "$tmp") | head -8)"
+	fi
+	rm -f "$tmp"
+}
