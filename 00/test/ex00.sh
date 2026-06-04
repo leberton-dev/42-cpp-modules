@@ -1,6 +1,8 @@
 #!/bin/bash
 
-. "$(dirname "${BASH_SOURCE[0]}")/test_lib.sh"
+HERE="$(dirname "${BASH_SOURCE[0]}")" 
+. "$HERE/test_lib.sh"
+cd "$HERE/../ex02" || exit 1
 
 NAME=megaphone
 SRCS="megaphone.cpp"
