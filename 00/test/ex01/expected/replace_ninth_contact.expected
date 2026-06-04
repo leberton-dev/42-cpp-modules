@@ -2,52 +2,52 @@ Commands:
 	1. ADD
 	2. SEARCH
 	3. EXIT
-Select command ( 1-3 ): Enter your first name: Enter your last name: Enter your nickname: Enter your phone number: Enter your darkest secret: Added contact successfully.
+Enter a command: Enter your first name: Enter your last name: Enter your nickname: Enter your phone number: Enter your darkest secret: Added contact successfully.
 Commands:
 	1. ADD
 	2. SEARCH
 	3. EXIT
-Select command ( 1-3 ): Enter your first name: Enter your last name: Enter your nickname: Enter your phone number: Enter your darkest secret: Added contact successfully.
+Enter a command: Enter your first name: Enter your last name: Enter your nickname: Enter your phone number: Enter your darkest secret: Added contact successfully.
 Commands:
 	1. ADD
 	2. SEARCH
 	3. EXIT
-Select command ( 1-3 ): Enter your first name: Enter your last name: Enter your nickname: Enter your phone number: Enter your darkest secret: Added contact successfully.
+Enter a command: Enter your first name: Enter your last name: Enter your nickname: Enter your phone number: Enter your darkest secret: Added contact successfully.
 Commands:
 	1. ADD
 	2. SEARCH
 	3. EXIT
-Select command ( 1-3 ): Enter your first name: Enter your last name: Enter your nickname: Enter your phone number: Enter your darkest secret: Added contact successfully.
+Enter a command: Enter your first name: Enter your last name: Enter your nickname: Enter your phone number: Enter your darkest secret: Added contact successfully.
 Commands:
 	1. ADD
 	2. SEARCH
 	3. EXIT
-Select command ( 1-3 ): Enter your first name: Enter your last name: Enter your nickname: Enter your phone number: Enter your darkest secret: Added contact successfully.
+Enter a command: Enter your first name: Enter your last name: Enter your nickname: Enter your phone number: Enter your darkest secret: Added contact successfully.
 Commands:
 	1. ADD
 	2. SEARCH
 	3. EXIT
-Select command ( 1-3 ): Enter your first name: Enter your last name: Enter your nickname: Enter your phone number: Enter your darkest secret: Added contact successfully.
+Enter a command: Enter your first name: Enter your last name: Enter your nickname: Enter your phone number: Enter your darkest secret: Added contact successfully.
 Commands:
 	1. ADD
 	2. SEARCH
 	3. EXIT
-Select command ( 1-3 ): Enter your first name: Enter your last name: Enter your nickname: Enter your phone number: Enter your darkest secret: Added contact successfully.
+Enter a command: Enter your first name: Enter your last name: Enter your nickname: Enter your phone number: Enter your darkest secret: Added contact successfully.
 Commands:
 	1. ADD
 	2. SEARCH
 	3. EXIT
-Select command ( 1-3 ): Enter your first name: Enter your last name: Enter your nickname: Enter your phone number: Enter your darkest secret: Added contact successfully.
+Enter a command: Enter your first name: Enter your last name: Enter your nickname: Enter your phone number: Enter your darkest secret: Added contact successfully.
 Commands:
 	1. ADD
 	2. SEARCH
 	3. EXIT
-Select command ( 1-3 ): Enter your first name: Enter your last name: Enter your nickname: Enter your phone number: Enter your darkest secret: Added contact successfully.
+Enter a command: Enter your first name: Enter your last name: Enter your nickname: Enter your phone number: Enter your darkest secret: Added contact successfully.
 Commands:
 	1. ADD
 	2. SEARCH
 	3. EXIT
-Select command ( 1-3 ):      Index|First Name| Last Name|  Nickname|
+Enter a command:      Index|First Name| Last Name|  Nickname|
          1|        bb|        bb|        bb|
          2|       ccc|       ccc|       ccc|
          3|      dddd|      dddd|      dddd|
@@ -65,5 +65,5 @@ Commands:
 	1. ADD
 	2. SEARCH
 	3. EXIT
-Select command ( 1-3 ): [ WARNING ] Closing PhoneBook, all contacts will be deleted forever.
+Enter a command: [ WARNING ] Closing PhoneBook, all contacts will be deleted forever.
 Are you sure about that ? ( y/n ): [ WARNING ] All PhoneBook contacts are now deleted. Good bye.
