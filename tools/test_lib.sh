@@ -188,3 +188,18 @@ check_norm() {
 	check_no_stl "$@"
 	check_include_guards "$@"
 }
+
+# === CHECK STDIN ===
+
+# assert_stdin <title> <input_file> <expected_file>
+assert_stdin() {
+	title=$1
+	tmp=$(mktemp)
+	./"$NAME" < "$2" > "$tmp" 2>&1
+	if diff -q "$tmp" "$3" >/dev/null 2>&1; then
+		_result ok "$title"
+	else
+		_result ko "$title"  "$(diff "$tmp" "$3" | head -8 )"
+	fi
+	rm -f "$tmp"
+}

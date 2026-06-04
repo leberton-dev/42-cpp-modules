@@ -33,21 +33,7 @@ fclean: clean
 
 re: fclean all
 
-test: re
-	@echo
-	@mkdir -p $(TEST_CAUGHT)
-	@pass=0; fail=0; \
-		for input in $(TEST_INPUTS); do \
-		name=$$(basename $$input .input); \
-		printf "%-35s " "TEST    $$name"; \
-		./$(NAME) < $$input > $(TEST_CAUGHT)/$$name.caught; \
-		if diff $(TEST_CAUGHT)/$$name.caught $(TEST_EXPECTED)/$$name.expected > /dev/null; then \
-			echo "[OK]"; pass=$$((pass+1)); \
-		else \
-			echo "[KO]"; fail=$$((fail+1)); \
-		fi; \
-	done; \
-	echo; echo "Passed: $$pass, Failed: $$fail"
-
+test:
+	@../test/ex01.sh
 
 .PHONY: all clean fclean re test
