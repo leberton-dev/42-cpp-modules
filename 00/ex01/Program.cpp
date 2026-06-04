@@ -13,7 +13,7 @@ void Program::run () {
 
     while (_is_running) {
         _print_commands ();
-        cmd = _getField ("Select command ( 1-3 ): ");
+        cmd = _getField ("Enter a command: ");
         if (!_is_running)
             break;
         _handle_command (cmd);
@@ -29,15 +29,15 @@ void Program::_print_commands (void) {
 }
 
 void Program::_handle_command (std::string cmd) {
-    if (cmd == "ADD" || cmd == "1")
+    if (cmd == "ADD")
         _add ();
-    else if (cmd == "SEARCH" || cmd == "2")
+    else if (cmd == "SEARCH")
         _search ();
-    else if (cmd == "EXIT" || cmd == "3")
+    else if (cmd == "EXIT")
         _exit ();
     else
-        std::cout << "[ ERROR ] Invalid command, please select between 1 "
-                     "and 3 or type the comamnd."
+        std::cout << "[ ERROR ] Invalid command, please enter a command ( "
+                     "ADD, SEARCH, EXIT )"
                   << std::endl;
 }
 
