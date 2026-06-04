@@ -1,6 +1,6 @@
 #!/bin/bash
 
-HERE="$(dirname "${BASH_SOURCE[0]}")" 
+HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 . "$HERE/test_lib.sh"
 FIX="$HERE/ex01"
 cd "$HERE/../ex01" || exit 1
