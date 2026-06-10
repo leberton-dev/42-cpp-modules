@@ -203,3 +203,4 @@ assert_stdin() {
 	fi
 	rm -f "$tmp"
 }
+
