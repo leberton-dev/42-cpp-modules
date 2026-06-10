@@ -25,12 +25,10 @@ int Account::getNbWithdrawals (void) {
 }
 
 void Account::displayAccountsInfos (void) {
-    std::cout << std::endl;
     _displayTimestamp ();
     std::cout << "accounts:" << _nbAccounts << ";total:" << _totalAmount
               << ";deposits:" << _totalNbDeposits
-              << ";withdrawals:" << _totalNbWithdrawals << std::endl
-              << std::endl;
+              << ";withdrawals:" << _totalNbWithdrawals << std::endl;
 }
 
 Account::Account (int initial_deposit)
@@ -85,8 +83,6 @@ void Account::displayStatus (void) const {
     std::cout << "index:" << _accountIndex << ";amount:" << _amount
               << ";deposits:" << _nbDeposits
               << ";withdrawals:" << _nbWithdrawals << std::endl;
-    if (_accountIndex == _nbAccounts - 1)
-        std::cout << std::endl;
 }
 
 void Account::_displayTimestamp (void) {
