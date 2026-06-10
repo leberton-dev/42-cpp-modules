@@ -27,9 +27,7 @@ fclean: clean
 
 re: fclean all
 
-diff: $(NAME)
-	@./$(NAME) > out
-	@diff <(cut -c 17- 19920104_091532.log) <(cut -c 17- out)
-	@rm out
+test: all
+	@../test/ex02.sh
 
 .PHONY: all clean fclean re
