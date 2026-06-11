@@ -8,11 +8,9 @@ HEAD := Zombie.hpp
 NAME := zombieHorde
 
 all: $(NAME)
-	./$(NAME)
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
-
 
 %.o: %.cpp $(HEAD)
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -24,5 +22,8 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+test: all
+	@../test/ex01.sh
 
 .PHONY: all clean fclean re
