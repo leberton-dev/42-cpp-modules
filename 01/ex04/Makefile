@@ -11,7 +11,6 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
 
-
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
@@ -24,9 +23,9 @@ fclean: clean
 re: fclean all
 
 test: all
-	./$(NAME) Makefile NAME HAHAHAHAHA
-	@cat -e Makefile.replace
-	@rm -f Makefile.replace
+	# ./$(NAME) Makefile NAME HAHAHAHAHA
+	# @cat -e Makefile.replace
+	# @rm -f Makefile.replace
+	@../test/ex04.sh
 
-
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re test

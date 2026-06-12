@@ -207,7 +207,7 @@ assert_stdin() {
 # === CHECK LEAKS ===
 
 check_no_leaks() {
-	if valgrind -q --leak-check=full --error-exitcode=1 ./"$NAME" >/dev/null 2>&1; then
+	if valgrind -q --leak-check=full --error-exitcode=1 ./"$NAME" "$@" >/dev/null 2>&1; then
 		_result ok "no leaks"
 	else
 		_result ko "no leaks" "valgrind found leaks/errors"
@@ -216,5 +216,5 @@ check_no_leaks() {
 
 check_leaks() {
 	section "LEAKS"
-	check_no_leaks
+	check_no_leaks "$@"
 }
