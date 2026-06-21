@@ -7,7 +7,7 @@ class Harl {
     public:
     Harl ();
     ~Harl ();
-    void complain (std::string level);
+    void complain (int start);
     void complainFilter (std::string level);
 
     private:

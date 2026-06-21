@@ -7,33 +7,26 @@ Harl::Harl () {
 Harl::~Harl () {
 }
 
-void Harl::complain (std::string level) {
+void Harl::complain (int start) {
     std::string const lvls[4] = { "DEBUG", "INFO", "WARNING", "ERROR" };
     void (Harl::* ptrFunc[4]) (
     void) = { &Harl::debug, &Harl::info, &Harl::warning, &Harl::error };
-    for (int i = 0; i < 4; i++) {
-        if (level == lvls[i]) {
-            (this->*ptrFunc[i]) ();
-            return;
-        }
+    for (int i = start; i < 4; i++) {
+        (this->*ptrFunc[i]) ();
+        std::cout << std::endl;
     }
 }
 
 void Harl::complainFilter (std::string level) {
     std::string const lvls[4] = { "DEBUG", "INFO", "WARNING", "ERROR" };
-    void (Harl::* ptrFunc[4]) (
-    void)      = { &Harl::debug, &Harl::info, &Harl::warning, &Harl::error };
-    int i      = 0;
-    bool found = false;
-    while (i < 4) {
-        if (lvls[i] == level) {
-            found = true;
-        }
-        if (found) {
-            (this->*ptrFunc[i]) ();
-            std::cout << std::endl;
-        }
+    int i                     = 0;
+    while (i < 4 && lvls[i] != level)
         i++;
+    switch (i) {
+    case 0: this->complain (i); break;
+    case 1: this->complain (i); break;
+    case 2: this->complain (i); break;
+    case 3: this->complain (i); break;
     }
 }
 
