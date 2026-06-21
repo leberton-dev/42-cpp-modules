@@ -8,7 +8,7 @@ bool isNotAFilter (std::string level) {
 
 int main (int argc, char** argv) {
     if (argc != 2 || isNotAFilter (argv[1])) {
-        std::cout << "Usage: " << argv[0] << " <level>" << std::endl;
+        std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
         return (1);
     }
 
