@@ -1,7 +1,7 @@
 #!/bin/bash
 
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-. "$HERE/test_lib.sh"
+. "$HERE/testlib/testlib.sh"
 FIX="$HERE/ex01"
 cd "$HERE/../ex01" || exit 1
 

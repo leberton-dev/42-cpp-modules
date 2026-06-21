@@ -1,7 +1,7 @@
 #!/bin/bash
 
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-. "$HERE/test_lib.sh"
+. "$HERE/testlib/testlib.sh"
 cd "$HERE/../ex02" || exit 1
 
 NAME=account

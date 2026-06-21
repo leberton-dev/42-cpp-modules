@@ -1,7 +1,7 @@
 #!/bin/bash
 
 HERE="$(dirname "${BASH_SOURCE[0]}")"
-. "$HERE/test_lib.sh"
+. "$HERE/testlib/testlib.sh"
 cd "$HERE/../ex00" || exit 1
 
 NAME=zomb
