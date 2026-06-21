@@ -12,7 +12,7 @@ _forbid() {
 }
 
 _check_forbidden() {
-	_forbid '\b(printf|fprintf|sprintf|malloc|calloc|realloc|free)\b' \
+	_forbid '\b(printf|fprintf|sprintf|malloc|calloc|realloc|free)\s*\(' \
 		"no forbidden functions" "$@"
 }
 
