@@ -23,7 +23,7 @@ void Harl::debug (void) {
     std::cout << "[ DEBUG ]" << std::endl;
     std::cout
     << "I love having extra bacon for my "
-       "7XL-double-cheese-triple-pickle-specialketchup burger. I really do!"
+       "7XL-double-cheese-triple-pickle-special-ketchup burger. I really do!"
     << std::endl;
 }
 
@@ -39,7 +39,7 @@ void Harl::warning (void) {
     std::cout << "[ WARNING ]" << std::endl;
     std::cout
     << "I think I deserve to have some extra bacon for free. I’ve been "
-       "coming for years whereas you started working here since last month."
+       "coming for years, whereas you started working here just last month."
     << std::endl;
 }
 
