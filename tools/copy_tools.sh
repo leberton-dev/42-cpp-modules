@@ -5,7 +5,7 @@ test_lib_dest="$1/test/testlib"
 
 mkdir -p "$1/test"
 if [ -d "$test_lib_dest" ]; then
-	rm -f "$test_lib_dest"
+	rm -rf "$test_lib_dest"
 fi
 cp -r "$test_lib_src" "$test_lib_dest"
 
