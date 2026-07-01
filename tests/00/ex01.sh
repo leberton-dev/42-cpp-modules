@@ -6,11 +6,12 @@ enter_exercise 00 ex01
 
 NAME=phonebook
 SRCS="main.cpp Contact.cpp PhoneBook.cpp Program.cpp"
+HEADERS="Contact.hpp PhoneBook.hpp Program.hpp"
 
 # section ex01
 check_file_exist Makefile $SRCS
 check_makefile main.cpp
-check_norm $SRCS Contact.hpp PhoneBook.hpp Program.hpp
+check_norm $SRCS $HEADERS
 
 # section "FUNCTIONAL"
 assert_stdin "add a contact" "$FIX/input/valid_add.input" "$FIX/expected/valid_add.expected"
