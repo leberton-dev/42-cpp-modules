@@ -1,11 +1,23 @@
 #!/bin/bash
 
+# include guard
+[ -n "$_LIB_LOADED" ] && return 0
+_LIB_LOADED=1
+
 # deactivate colors if the exit is not a terminal
 if [ -t 1 ]; then
 	R='\033[0;31m'; G='\033[0;32m'; Y='\033[0;33m'; B='\033[1;34m'; N='\033[0m'
 else
 	R=''; G=''; Y=''; B=''; N=''
 fi
+
+_LIB_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "$_LIB_DIR/.." && pwd)"
+
+enter_exercise() {
+	FIX="$_LIB_DIR/$1/$2"
+	cd "$REPO_ROOT/$1/$2" || exit 1
+}
 
 PASS=0
 FAIL=0
@@ -118,7 +130,7 @@ check_clean() {
 }
 
 check_makefile() {
-	section "MAKEFILE"
+	# section "MAKEFILE"
 	check_compiles
 	check_no_warnings
 	check_relinking
@@ -130,7 +142,7 @@ check_makefile() {
 
 
 check_file_exist() {
-	section "FILES"
+	# section "FILES"
 	for f in "$@"; do
 		if [ -f "$f" ]; then
 			_result ok "present: $f"
@@ -182,7 +194,7 @@ check_include_guards() {
 }
 
 check_norm() {
-	section "NORM"
+	# section "NORM"
 	check_forbidden "$@"
 	check_no_using_namespace "$@"
 	check_no_stl "$@"
@@ -200,6 +212,19 @@ assert_stdin() {
 		_result ok "$title"
 	else
 		_result ko "$title"  "$(diff "$tmp" "$3" | head -8 )"
+	fi
+	rm -f "$tmp"
+}
+
+# assert_log_diff <title> <log_file>
+assert_log_diff() {
+	title=$1
+	tmp=$(mktemp)
+	./"$NAME" > "$tmp" 2>&1
+	if diff <(cut -c 17- "$2") <(cut -c 17- "$tmp") >/dev/null 2>&1; then
+		_result ok "$title"
+	else
+		_result ko "$title" "$(diff <(cut -c 17- "$2") <(cut -c 17- "$tmp") | head -8)"
 	fi
 	rm -f "$tmp"
 }
