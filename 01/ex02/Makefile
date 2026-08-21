@@ -7,11 +7,9 @@ OBJS := $(SRCS:.cpp=.o)
 NAME := hit
 
 all: $(NAME)
-	./$(NAME)
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
-
 
 %.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -23,5 +21,8 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+test: all
+	@../test/ex02.sh
 
 .PHONY: all clean fclean re

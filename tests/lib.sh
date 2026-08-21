@@ -166,7 +166,7 @@ _forbid() {
 }
 
 check_forbidden() {
-	_forbid '\b(printf|fprintf|sprintf|malloc|calloc|realloc|free)\b' \
+	_forbid '\b(printf|fprintf|sprintf|malloc|calloc|realloc|free)\s*\(' \
 		"no forbidden functions" "$@"
 }
 
@@ -199,6 +199,16 @@ check_norm() {
 	check_no_using_namespace "$@"
 	check_no_stl "$@"
 	check_include_guards "$@"
+}
+
+# === CHECK LEAKS ===
+
+check_leaks() {
+	if valgrind -q --leak-check=full --error-exitcode=1 ./"$NAME" "$@" >/dev/null 2>&1; then
+		_result ok "no leaks"
+	else
+		_result ko "no leaks" "valgrind found leaks/errors"
+	fi
 }
 
 # === CHECK STDIN ===

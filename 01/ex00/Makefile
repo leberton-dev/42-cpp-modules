@@ -24,7 +24,7 @@ fclean: clean
 
 re: fclean all
 
-test: $(NAME)
-	@./$(NAME)
+test: all
+	@../test/ex00.sh
 
 .PHONY: all clean fclean re

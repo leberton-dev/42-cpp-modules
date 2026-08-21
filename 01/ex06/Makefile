@@ -25,17 +25,6 @@ fclean: clean
 re: fclean all
 
 test: all
-	@./$(NAME) "DEBUG"
-	@echo ""
-	@./$(NAME) "INFO"
-	@echo ""
-	@./$(NAME) "WARNING"
-	@echo ""
-	@./$(NAME) "ERROR"
-	@echo ""
-	-@./$(NAME) "HAHAHAHA"
-	-@./$(NAME) "debug"
-	-@./$(NAME) ""
-	-@./$(NAME) "   "
+	@../test/ex06.sh
 
 .PHONY: all clean fclean re

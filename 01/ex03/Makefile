@@ -8,11 +8,9 @@ HEAD := Weapon.hpp HumanA.hpp HumanB.hpp
 NAME := violence
 
 all: $(NAME)
-	./$(NAME)
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
-
 
 %.o: %.cpp $(HEAD)
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -25,4 +23,7 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+test: all
+	@../test/ex03.sh
+
+.PHONY: all clean fclean re test
