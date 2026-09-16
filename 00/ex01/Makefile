@@ -8,12 +8,6 @@ OBJS := $(SRCS:.cpp=.o)
 
 HEADERS := Contact.hpp PhoneBook.hpp Program.hpp
 
-TEST_DIR := tests
-TEST_INPUT := $(TEST_DIR)/input
-TEST_CAUGHT := $(TEST_DIR)/caught
-TEST_EXPECTED := $(TEST_DIR)/expected
-TEST_INPUTS := $(wildcard $(TEST_INPUT)/*.input)
-
 RM := rm -f
 
 all: $(NAME)
@@ -26,14 +20,11 @@ $(NAME): $(OBJS)
 
 clean:
 	$(RM) $(OBJS)
-	$(RM) -r "$(TEST_DIR)/caught"
 
 fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
 
-test:
-	@../test/ex01.sh
 
-.PHONY: all clean fclean re test
+.PHONY: all clean fclean re

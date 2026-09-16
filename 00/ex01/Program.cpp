@@ -134,7 +134,7 @@ void Program::_search (void) {
         _displayContactShort (_phoneBook.contact (i), i + 1);
 
     std::string idx;
-    std::cout << "Enter index ( 1-" << _phoneBook.count () << " or 'b' to go back ): ";
+    std::cout << "Enter index ( 1-" << _phoneBook.count () << " ): ";
     if (!std::getline (std::cin, idx)) {
         _is_running = false;
         return;
