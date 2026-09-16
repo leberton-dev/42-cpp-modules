@@ -40,6 +40,7 @@ Account::Account (int initial_deposit)
     _nbAccounts += 1;
     _totalAmount += initial_deposit;
 }
+
 Account::~Account (void) {
     _displayTimestamp ();
     std::cout << "index:" << _accountIndex << ";amount:" << _amount << ";closed"
