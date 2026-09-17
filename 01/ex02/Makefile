@@ -22,7 +22,4 @@ fclean: clean
 
 re: fclean all
 
-test: all
-	@../test/ex02.sh
-
 .PHONY: all clean fclean re
