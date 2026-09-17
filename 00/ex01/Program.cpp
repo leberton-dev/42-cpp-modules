@@ -35,10 +35,6 @@ void Program::_handle_command (std::string cmd) {
         _search ();
     else if (cmd == "EXIT")
         _exit ();
-    else
-        std::cout << "[ ERROR ] Invalid command, please enter a command ( "
-                     "ADD, SEARCH, EXIT )"
-                  << std::endl;
 }
 
 
