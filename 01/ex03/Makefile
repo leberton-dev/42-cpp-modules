@@ -23,7 +23,4 @@ fclean: clean
 
 re: fclean all
 
-test: all
-	@../test/ex03.sh
-
-.PHONY: all clean fclean re test
+.PHONY: all clean fclean re
