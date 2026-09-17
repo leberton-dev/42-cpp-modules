@@ -24,8 +24,4 @@ fclean: clean
 
 re: fclean all
 
-test: all
-	@../test/ex05.sh
-
-
 .PHONY: all clean fclean re
