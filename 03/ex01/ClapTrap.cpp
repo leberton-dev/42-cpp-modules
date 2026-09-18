@@ -3,16 +3,16 @@
 #include <iostream>
 #include <sstream>
 
-void _logEnterConstructor (std::string name, std::string constructor_type, std::string color) {
+static void _logEnterConstructor (std::string name, std::string constructor_type, std::string color) {
     std::cout << "Entering " << color << "ClapTrap " << name << RESET << " "
               << constructor_type << std::endl;
 }
 
-void _logActionSuccess (const std::string& action, const std::string& color, std::string& name) {
+static void _logActionSuccess (const std::string& action, const std::string& color, std::string& name) {
     std::cout << color << "ClapTrap " << name << RESET << " " << action << std::endl;
 }
 
-void _logActionFailed (const std::string& action,
+static void _logActionFailed (const std::string& action,
 const std::string& reason,
 const std::string& color,
 const std::string& name) {
@@ -20,13 +20,13 @@ const std::string& name) {
               << " due to " << reason << std::endl;
 }
 
-std::string _combineStringAndInt (std::string str, int a) {
+static std::string _combineStringAndInt (std::string str, int a) {
     std::stringstream ss;
     ss << a;
     return str + ss.str ();
 }
 
-int _max (int a, int b) {
+static int _max (int a, int b) {
     if (b > a)
         return b;
     return a;

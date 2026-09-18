@@ -20,7 +20,7 @@ class ClapTrap {
     void beRepaired (unsigned int amount);
 	void log(void);
 
-    private:
+    protected:
     std::string _name;
     int _hitPoints;
     int _energyPoints;
