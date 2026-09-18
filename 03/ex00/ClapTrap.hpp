@@ -4,7 +4,6 @@
 #include <string>
 
 #define BLUE "\033[1;34m"
-#define YELLOW "\033[1;33m"
 #define RESET "\033[0m"
 
 class ClapTrap {

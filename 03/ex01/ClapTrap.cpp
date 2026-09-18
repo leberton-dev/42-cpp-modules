@@ -75,11 +75,11 @@ void ClapTrap::attack (const std::string& target) {
         action += _combineStringAndInt (" Current energy points: ", _energyPoints);
         _logActionSuccess (action, BLUE, _name);
     } else if (_energyPoints <= 0 && _hitPoints <= 0)
-        _logActionFailed ("attack", "insufficient energy and hit points", YELLOW, _name);
+        _logActionFailed ("attack", "insufficient energy and hit points", BLUE, _name);
     else if (_energyPoints <= 0)
-        _logActionFailed ("attack", "insufficient energy points", YELLOW, _name);
+        _logActionFailed ("attack", "insufficient energy points", BLUE, _name);
     else
-        _logActionFailed ("attack", "insufficient hit points", YELLOW, _name);
+        _logActionFailed ("attack", "insufficient hit points", BLUE, _name);
 }
 
 void ClapTrap::takeDamage (const unsigned int amount) {
@@ -90,7 +90,7 @@ void ClapTrap::takeDamage (const unsigned int amount) {
         action += _combineStringAndInt (" of damage. Remaining hitPoints: ", _hitPoints);
         _logActionSuccess (action, BLUE, _name);
     } else
-        _logActionFailed ("take damage", "insufficient hit points", YELLOW, _name);
+        _logActionFailed ("take damage", "insufficient hit points", BLUE, _name);
 }
 
 void ClapTrap::beRepaired (const unsigned int amount) {
@@ -105,11 +105,11 @@ void ClapTrap::beRepaired (const unsigned int amount) {
         _logActionSuccess (action, BLUE, _name);
     } else if (_energyPoints <= 0 && _hitPoints <= 0)
         _logActionFailed (
-        "repair himself", "insufficient energy and hit points", YELLOW, _name);
+        "repair himself", "insufficient energy and hit points", BLUE, _name);
     else if (_energyPoints <= 0)
-        _logActionFailed ("repair himself", "insufficient energy points", YELLOW, _name);
+        _logActionFailed ("repair himself", "insufficient energy points", BLUE, _name);
     else
-        _logActionFailed ("repair himself", "insufficient hit points", YELLOW, _name);
+        _logActionFailed ("repair himself", "insufficient hit points", BLUE, _name);
 }
 
 void ClapTrap::log (void) {
