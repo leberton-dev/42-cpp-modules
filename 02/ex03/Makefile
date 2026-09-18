@@ -8,11 +8,9 @@ HEAD := Fixed.hpp Point.hpp
 NAME := bsp
 
 all: $(NAME)
-	./$(NAME)
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
-
 
 %.o: %.cpp $(HEAD)
 	$(CC) $(CFLAGS) -c $< -o $@

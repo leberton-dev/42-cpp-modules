@@ -8,7 +8,6 @@ HEAD := Fixed.hpp
 NAME := fixed
 
 all: $(NAME)
-	./$(NAME)
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
