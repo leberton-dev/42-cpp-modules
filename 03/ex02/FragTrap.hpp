@@ -8,9 +8,9 @@
 #define RED "\033[1;31m"
 #define RESET "\033[0m"
 
-#define HP 100
-#define EP 100
-#define AD 30
+#define FRAGTRAP_HP 100
+#define FRAGTRAP_EP 100
+#define FRAGTRAP_AD 30
 
 class FragTrap : public ClapTrap {
     public:

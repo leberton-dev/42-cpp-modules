@@ -9,9 +9,9 @@
 #define GREEN "\033[1;32m"
 #define RESET "\033[0m"
 
-#define HP 100
-#define EP 50
-#define AD 20
+#define SCAVTRAP_HP 100
+#define SCAVTRAP_EP 50
+#define SCAVTRAP_AD 20
 
 class ScavTrap : public ClapTrap {
     public:

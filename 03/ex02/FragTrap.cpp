@@ -16,16 +16,16 @@ _logActionSuccess (const std::string& action, const std::string& color, std::str
 
 FragTrap::FragTrap () {
     _logEnterConstructor (_name, "default constructor", RED);
-    _hitPoints    = HP;
-    _energyPoints = EP;
-    _attackDamage = AD;
+    _hitPoints    = FRAGTRAP_HP;
+    _energyPoints = FRAGTRAP_EP;
+    _attackDamage = FRAGTRAP_AD;
 }
 
 FragTrap::FragTrap (std::string name) : ClapTrap (name) {
     _logEnterConstructor (_name, "parameterized constructor", RED);
-    _hitPoints    = HP;
-    _energyPoints = EP;
-    _attackDamage = AD;
+    _hitPoints    = FRAGTRAP_HP;
+    _energyPoints = FRAGTRAP_EP;
+    _attackDamage = FRAGTRAP_AD;
 }
 
 FragTrap::FragTrap (const FragTrap& other) : ClapTrap (other) {

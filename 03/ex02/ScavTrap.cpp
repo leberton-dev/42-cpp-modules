@@ -30,16 +30,16 @@ static std::string _combineStringAndInt (std::string str, int a) {
 
 ScavTrap::ScavTrap () {
     _logEnterConstructor (_name, "default constructor", GREEN);
-    _hitPoints    = HP;
-    _energyPoints = EP;
-    _attackDamage = AD;
+    _hitPoints    = SCAVTRAP_HP;
+    _energyPoints = SCAVTRAP_EP;
+    _attackDamage = SCAVTRAP_AD;
 }
 
 ScavTrap::ScavTrap (std::string name) : ClapTrap (name) {
     _logEnterConstructor (_name, "parameterized constructor", GREEN);
-    _hitPoints    = HP;
-    _energyPoints = EP;
-    _attackDamage = AD;
+    _hitPoints    = SCAVTRAP_HP;
+    _energyPoints = SCAVTRAP_EP;
+    _attackDamage = SCAVTRAP_AD;
 }
 
 ScavTrap::ScavTrap (const ScavTrap& other) : ClapTrap (other) {
