@@ -42,6 +42,14 @@ bool Fixed::operator> (const Fixed& rhs) const {
     return this->_value > rhs._value;
 }
 
+bool Fixed::operator<= (const Fixed& rhs) const {
+    return this->_value <= rhs._value;
+}
+
+bool Fixed::operator>= (const Fixed& rhs) const {
+    return this->_value >= rhs._value;
+}
+
 Fixed Fixed::operator+ (const Fixed& rhs) const {
     Fixed result;
     result.setRawBits (this->_value + rhs._value);
