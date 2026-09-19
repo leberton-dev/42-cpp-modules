@@ -13,7 +13,6 @@ public:
 
   Fixed getX(void) const;
   Fixed getY(void) const;
-  static float getAire(const Point a, const Point b, const Point c);
 
 private:
   Fixed const _x;

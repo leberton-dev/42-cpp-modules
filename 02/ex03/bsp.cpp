@@ -1,12 +1,20 @@
 #include "Point.hpp"
 
+static long side(Point const &a, Point const &b, Point const &p) {
+  long ax = a.getX().getRawBits();
+  long ay = a.getY().getRawBits();
+  long bx = b.getX().getRawBits();
+  long by = b.getY().getRawBits();
+  long px = p.getX().getRawBits();
+  long py = p.getY().getRawBits();
+
+  return (bx - ax) * (py - ay) - (by - ay) * (px - ax);
+}
+
 bool bsp(Point const a, Point const b, Point const c, Point const point) {
-  Fixed totalAir = Point::getAire(a, b, c);
-  float air1 = Point::getAire(point, b, c);
-  float air2 = Point::getAire(a, point, c);
-  float air3 = Point::getAire(a, b, point);
-  totalAir = air1 + air2 + air3;
-  if (totalAir == Point::getAire(a, b, c) && air1 > 0 && air2 > 0 && air3 > 0)
-    return true;
-  return false;
+  long d1 = side(a, b, point);
+  long d2 = side(b, c, point);
+  long d3 = side(c, a, point);
+
+  return (d1 > 0 && d2 > 0 && d3 > 0) || (d1 < 0 && d2 < 0 && d3 < 0);
 }
