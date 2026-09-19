@@ -1,5 +1,6 @@
 #include "ClapTrap.hpp"
 
+#include <climits>
 #include <iostream>
 #include <sstream>
 
@@ -24,12 +25,6 @@ static std::string _combineStringAndInt (std::string str, int a) {
     std::stringstream ss;
     ss << a;
     return str + ss.str ();
-}
-
-static int _max (int a, int b) {
-    if (b > a)
-        return b;
-    return a;
 }
 
 ClapTrap::ClapTrap ()
@@ -85,7 +80,10 @@ void ClapTrap::attack (const std::string& target) {
 void ClapTrap::takeDamage (const unsigned int amount) {
     std::string action = "";
     if (_hitPoints > 0) {
-        _hitPoints = _max (_hitPoints - amount, 0);
+        if (amount >= static_cast<unsigned int> (_hitPoints))
+            _hitPoints = 0;
+        else
+            _hitPoints -= amount;
         action += _combineStringAndInt ("took ", amount);
         action += _combineStringAndInt (" of damage. Remaining hitPoints: ", _hitPoints);
         _logActionSuccess (action, BLUE, _name);
@@ -97,7 +95,10 @@ void ClapTrap::beRepaired (const unsigned int amount) {
     std::string action = "";
 
     if (_energyPoints > 0 && _hitPoints > 0) {
-        _hitPoints += amount;
+        if (amount >= static_cast<unsigned int> (INT_MAX - _hitPoints))
+            _hitPoints = INT_MAX;
+        else
+            _hitPoints += amount;
         _energyPoints--;
         action += _combineStringAndInt ("repairs itself for ", amount);
         action += _combineStringAndInt ("! Current hit points: ", _hitPoints);
