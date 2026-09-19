@@ -1,0 +1,26 @@
+CC := c++
+CFLAGS := -Wall -Wextra -Werror -std=c++98
+
+SRCS := main.cpp AAnimal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
+OBJS := $(SRCS:.cpp=.o)
+HEAD := AAnimal.hpp Dog.hpp Cat.hpp WrongAnimal.hpp WrongCat.hpp Brain.hpp
+
+NAME := polymorphism
+
+all: $(NAME)
+
+$(NAME): $(OBJS)
+	$(CC) $(CFLAGS) -o $@ $^
+
+%.o: %.cpp $(HEAD)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+	rm -f $(OBJS)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re
