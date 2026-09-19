@@ -27,6 +27,12 @@ static std::string _combineStringAndInt (std::string str, int a) {
     return str + ss.str ();
 }
 
+static std::string _combineStringAndUInt (std::string str, unsigned int a) {
+    std::stringstream ss;
+    ss << a;
+    return str + ss.str ();
+}
+
 ClapTrap::ClapTrap ()
 : _name ("default"), _hitPoints (10), _energyPoints (10), _attackDamage (0) {
     _logEnterConstructor (_name, "default constructor", BLUE);
@@ -84,7 +90,7 @@ void ClapTrap::takeDamage (const unsigned int amount) {
             _hitPoints = 0;
         else
             _hitPoints -= amount;
-        action += _combineStringAndInt ("took ", amount);
+        action += _combineStringAndUInt ("took ", amount);
         action += _combineStringAndInt (" of damage. Remaining hitPoints: ", _hitPoints);
         _logActionSuccess (action, BLUE, _name);
     } else
@@ -100,7 +106,7 @@ void ClapTrap::beRepaired (const unsigned int amount) {
         else
             _hitPoints += amount;
         _energyPoints--;
-        action += _combineStringAndInt ("repairs itself for ", amount);
+        action += _combineStringAndUInt ("repairs itself for ", amount);
         action += _combineStringAndInt ("! Current hit points: ", _hitPoints);
         action += _combineStringAndInt (", energy points: ", _energyPoints);
         _logActionSuccess (action, BLUE, _name);
