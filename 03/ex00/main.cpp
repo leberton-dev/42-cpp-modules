@@ -66,6 +66,13 @@ void attackRemovesEnergy (ClapTrap& bob) {
     std::cout << std::endl;
 }
 
+static void pointerClapTrapDeletes() {
+	std::cout << "[ POINTER CLAP TRAP DELETES ]" << std::endl;
+	ClapTrap* bob = new ClapTrap();
+	delete bob;
+	std::cout << std::endl;
+}
+
 int main (void) {
     ClapTrap bob = ClapTrap ("Bob");
 
@@ -86,4 +93,6 @@ int main (void) {
     attackRemovesEnergy (bob);
     attacksWithoutEnergy (bob);
     repairWithoutEnergy (bob);
+
+	pointerClapTrapDeletes();
 }

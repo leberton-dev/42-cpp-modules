@@ -100,6 +100,13 @@ static void copyAssignmentConstructorEstablished(ScavTrap* old, std::string name
     std::cout << std::endl;
 }
 
+static void pointerScavTrapDeletes() {
+	std::cout << "[ POINTER SCAV TRAP DELETES ]" << std::endl;
+	ScavTrap* bob = new ScavTrap();
+	delete bob;
+	std::cout << std::endl;
+}
+
 
 int main (void) {
 	defaultConstructorEstablished();
@@ -125,4 +132,5 @@ int main (void) {
     repairWithoutEnergy (bob);
 
 	activateGuardGateMode(bob);
+	pointerScavTrapDeletes();
 }

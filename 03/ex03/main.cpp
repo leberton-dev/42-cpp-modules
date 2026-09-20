@@ -111,6 +111,14 @@ static void whoAmIMethod (DiamondTrap& bob) {
 }
 
 
+static void pointerDiamondTrapDeletes () {
+    std::cout << "[ POINTER DIAMOND TRAP DELETES ]" << std::endl;
+    DiamondTrap* bob = new DiamondTrap ();
+    delete bob;
+    std::cout << std::endl;
+}
+
+
 int main (void) {
     defaultConstructorEstablished ();
     DiamondTrap bob = parameterizedConstructorEstablished ("Constructor Bob");
@@ -137,4 +145,6 @@ int main (void) {
     activateHighFivesGuys (bob);
     activateGuardGateMode (bob);
     whoAmIMethod (bob);
+
+	pointerDiamondTrapDeletes();
 }

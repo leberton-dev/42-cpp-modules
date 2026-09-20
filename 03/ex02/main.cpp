@@ -66,46 +66,50 @@ static void attackRemovesEnergy (FragTrap& bob) {
     std::cout << std::endl;
 }
 
-static void activateHighFivesGuys(FragTrap& bob) {
+static void activateHighFivesGuys (FragTrap& bob) {
     std::cout << "[ ACTIVATE HIGH FIVES GUYS ]" << std::endl;
-	bob.highFivesGuys();
+    bob.highFivesGuys ();
     std::cout << std::endl;
-
 }
 
-static void defaultConstructorEstablished() {
+static void defaultConstructorEstablished () {
     std::cout << "[ DEFAULT CONSTRUCTOR ESTABLISHED ]" << std::endl;
-	FragTrap bob = FragTrap();
+    FragTrap bob = FragTrap ();
     std::cout << std::endl;
 }
 
-static FragTrap parameterizedConstructorEstablished(std::string name) {
+static FragTrap parameterizedConstructorEstablished (std::string name) {
     std::cout << "[ PARAMETERIZED CONSTRUCTOR ESTABLISHED ]" << std::endl;
-	FragTrap st = FragTrap(name);
+    FragTrap st = FragTrap (name);
     std::cout << std::endl;
 
-	return st;
+    return st;
 }
 
-static void copyConstructorEstablished(FragTrap& bob) {
+static void copyConstructorEstablished (FragTrap& bob) {
     std::cout << "[ COPY CONSTRUCTOR ESTABLISHED ]" << std::endl;
-	FragTrap st = FragTrap(bob);
+    FragTrap st = FragTrap (bob);
     std::cout << std::endl;
 }
 
-static void copyAssignmentConstructorEstablished(FragTrap* old, std::string name)
-{
+static void copyAssignmentConstructorEstablished (FragTrap* old, std::string name) {
     std::cout << "[ COPY ASSIGNMENT CONSTRUCTOR ESTABLISHED ]" << std::endl;
-	*old = FragTrap(name);
+    *old = FragTrap (name);
     std::cout << std::endl;
 }
 
+static void pointerFragTrapDeletes () {
+    std::cout << "[ POINTER FRAG TRAP DELETES ]" << std::endl;
+    FragTrap* bob = new FragTrap ();
+    delete bob;
+    std::cout << std::endl;
+}
 
 int main (void) {
-	defaultConstructorEstablished();
-	FragTrap bob = parameterizedConstructorEstablished("Constructor Bob");
-	copyConstructorEstablished(bob);
-	copyAssignmentConstructorEstablished(&bob, "Bob");
+    defaultConstructorEstablished ();
+    FragTrap bob = parameterizedConstructorEstablished ("Constructor Bob");
+    copyConstructorEstablished (bob);
+    copyAssignmentConstructorEstablished (&bob, "Bob");
 
     instanciatesWithRequiredParams (bob);
     attacksWithEnergyAndHitPoints (bob);
@@ -124,5 +128,6 @@ int main (void) {
     attacksWithoutEnergy (bob);
     repairWithoutEnergy (bob);
 
-	activateHighFivesGuys(bob);
+    activateHighFivesGuys (bob);
+    pointerFragTrapDeletes ();
 }
