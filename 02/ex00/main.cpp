@@ -30,7 +30,7 @@ static void testCopyConstructor() {
 }
 
 static void testCopyAssignementOperator() {
-	std::cout << "[ TEST COPY ASSIGNEMENT CONSTRUCTOR ]" << std::endl;
+	std::cout << "[ TEST COPY ASSIGNEMENT OPERATOR ]" << std::endl;
 	Fixed a;
 	Fixed b = a;
 }
