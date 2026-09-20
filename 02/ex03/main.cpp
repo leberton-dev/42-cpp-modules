@@ -31,11 +31,11 @@ int main(void) {
 
   std::cout << std::endl;
   // Edge cases
-  runTest(a, b, c, Point(0, 0), "( 0,  0) - vertex A");
-  runTest(a, b, c, Point(0, 0), "( 10,  0) - vertex A");
-  runTest(a, b, c, Point(0, 0), "( 0,  10) - vertex A");
-  runTest(a, b, c, Point(5, 0), "( 5,  0) - midpoint of side AB");
-  runTest(a, b, c, Point(5, 5), "( 5,  5) - midpoint of hypotenuse BC");
+  runTest(a, b, c, Point(0, 0), "(0, 0) - vertex A");
+  runTest(a, b, c, Point(10, 0), "(10, 0) - vertex A");
+  runTest(a, b, c, Point(0, 10), "(0, 10) - vertex A");
+  runTest(a, b, c, Point(5, 0), "(5, 0) - midpoint of side AB");
+  runTest(a, b, c, Point(5, 5), "(5, 5) - midpoint of hypotenuse BC");
 
   return 0;
 }

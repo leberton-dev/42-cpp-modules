@@ -1,45 +1,59 @@
 #include "Fixed.hpp"
 #include <iostream>
 
-static void testGetRawBits() {
-	std::cout << "[ TEST GET RAW BITS ]" << std::endl;
-	Fixed a;
-
-	std::cout << a.getRawBits() << std::endl;
+static void printTestTitle (const std::string& title) {
+    std::cout << std::endl << "[ " << title << " ]" << std::endl;
 }
 
-static void testSetRawBits() {
-	std::cout << "[ TEST SET RAW BITS ]" << std::endl;
-	Fixed a;
+static void testGetRawBits () {
+    printTestTitle ("TEST GET RAW BITS");
 
-	a.setRawBits(10);
-	std::cout << a.getRawBits() << std::endl;
+    Fixed a;
+    std::cout << a.getRawBits () << std::endl;
 }
 
-static void testDefaultConstructor() {
-	std::cout << "[ TEST DEFAULT CONSTRUCTOR ]" << std::endl;
+static void testSetRawBits () {
+    printTestTitle ("TEST SET RAW BITS");
+    Fixed a;
 
-	Fixed a;
+    a.setRawBits (10);
+    std::cout << a.getRawBits () << std::endl;
 }
 
-static void testCopyConstructor() {
-	std::cout << "[ TEST COPY CONSTRUCTOR ]" << std::endl;
+static void testDefaultConstructor () {
+    printTestTitle ("TEST DEFAULT CONSTRUCTOR");
 
-	Fixed a;
-	Fixed b = Fixed(a);
+    Fixed a;
 }
 
-static void testCopyAssignementOperator() {
-	std::cout << "[ TEST COPY ASSIGNEMENT OPERATOR ]" << std::endl;
-	Fixed a;
-	Fixed b = a;
+static void testCopyConstructor () {
+    printTestTitle ("TEST COPY CONSTRUCTOR");
+
+    Fixed a;
+    Fixed b = Fixed (a);
+}
+
+static void testCopyAssignementOperator () {
+    printTestTitle ("TEST COPY ASSIGNEMENT OPERATOR");
+    Fixed a;
+    Fixed b = a;
 }
 
 int main (void) {
-	testGetRawBits();
-	testSetRawBits();
-	testDefaultConstructor();
-	testCopyConstructor();
-	testCopyAssignementOperator();
+    testGetRawBits ();
+    testSetRawBits ();
+    testDefaultConstructor ();
+    testCopyConstructor ();
+    testCopyAssignementOperator ();
+
+    printTestTitle ("TEST IN SUBJECT");
+    Fixed a;
+    Fixed b (a);
+    Fixed c;
+    c = b;
+    std::cout << a.getRawBits () << std::endl;
+    std::cout << b.getRawBits () << std::endl;
+    std::cout << c.getRawBits () << std::endl;
+
     return 0;
 }
