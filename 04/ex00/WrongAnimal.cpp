@@ -14,7 +14,7 @@ WrongAnimal::WrongAnimal (const WrongAnimal& other) : type (other.type) {
 	std::cout << "Entered WrongAnimal copy constructor" << std::endl;
 }
 
-WrongAnimal WrongAnimal::operator= (const WrongAnimal& other) {
+WrongAnimal& WrongAnimal::operator= (const WrongAnimal& other) {
 	std::cout << "Entered WrongAnimal copy assignment constructor" << std::endl;
     if (this != &other) {
         type = other.type;
