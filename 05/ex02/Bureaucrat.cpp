@@ -1,7 +1,7 @@
 #include <iostream>
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat (std::string name, int grade) : _name (name) {
     if (grade > 150)
@@ -52,7 +52,7 @@ void Bureaucrat::gradeDecrement () {
     _grade++;
 }
 
-void Bureaucrat::signForm (Form& f) {
+void Bureaucrat::signForm (AForm& f) {
     try {
         f.beSigned (*this);
         std::cout << _name << " signed " << f.getName () << std::endl;

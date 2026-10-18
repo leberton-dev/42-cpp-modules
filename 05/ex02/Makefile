@@ -2,8 +2,8 @@
 
 CFLAGS	:= -Wall -Wextra -Werror -std=c++98
 
-SOURCES	:= Form.cpp Bureaucrat.cpp main.cpp
-HEADERS	:= Form.hpp Bureaucrat.hpp
+SOURCES	:= AForm.cpp Bureaucrat.cpp ShrubberyCreationForm.cpp main.cpp
+HEADERS	:= AForm.hpp Bureaucrat.hpp ShrubberyCreationForm.hpp
 BUILD	:= build
 OBJECTS	:= $(SOURCES:%.cpp=$(BUILD)/%.o)
 

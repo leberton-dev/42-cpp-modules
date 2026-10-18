@@ -5,7 +5,7 @@
 #include <ostream>
 #include <string>
 
-class Form;
+class AForm;
 
 class Bureaucrat {
     public:
@@ -27,7 +27,7 @@ class Bureaucrat {
     int getGrade () const;
     void gradeIncrement ();
     void gradeDecrement ();
-	void signForm(Form& f);
+	void signForm(AForm& f);
 
     private:
     const std::string _name;
