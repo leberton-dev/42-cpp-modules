@@ -21,7 +21,8 @@ AForm& AForm::operator= (const AForm& other) {
     return *this;
 }
 
-AForm::~AForm() {}
+AForm::~AForm () {
+}
 
 const char* AForm::GradeTooHighException::what () const throw () {
     return "Grade is too high";
@@ -61,4 +62,12 @@ std::ostream& operator<< (std::ostream& out, const AForm& f) {
     out << f.getName () << ", signed " << f.getSigned () << ", grade sign "
         << f.getGradeSign () << ", grade execute " << f.getGradeExecute ();
     return out;
+}
+
+
+void AForm::execute (Bureaucrat const& executor) const {
+    if (!getSigned ())
+        throw AForm::UnsignedFormException ();
+    if (getGradeExecute () < executor.getGrade ())
+        throw AForm::GradeTooLowException ();
 }

@@ -1,7 +1,7 @@
 #include <iostream>
 
-#include "Bureaucrat.hpp"
 #include "AForm.hpp"
+#include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat (std::string name, int grade) : _name (name) {
     if (grade > 150)
@@ -65,4 +65,20 @@ void Bureaucrat::signForm (AForm& f) {
 std::ostream& operator<< (std::ostream& out, const Bureaucrat& b) {
     out << b.getName () << ", bureaucrat grade " << b.getGrade () << ".";
     return out;
+}
+
+void Bureaucrat::executeForm (AForm const& form) const {
+    try {
+        form.execute (*this);
+		std::cout << _name << " executed " << form.getName() << std::endl;
+    } catch (AForm::UnsignedFormException& e) {
+        std::cout << _name << " couldn't execute form " << form.getName ();
+        std::cout << " because the form is unsigned." << std::endl;
+    } catch (AForm::GradeTooLowException& e) {
+        std::cout << _name << " couldn't execute form " << form.getName ();
+        std::cout << " because his grade is too low." << std::endl;
+    } catch (std::exception& e) {
+        std::cout << _name << " couldn't execute form " << form.getName ();
+        std::cout << " because of an unhandled exception: " << e.what () << std::endl;
+    }
 }
