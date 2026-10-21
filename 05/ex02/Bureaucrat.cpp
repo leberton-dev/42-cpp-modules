@@ -70,7 +70,7 @@ std::ostream& operator<< (std::ostream& out, const Bureaucrat& b) {
 void Bureaucrat::executeForm (AForm const& form) const {
     try {
         form.execute (*this);
-		std::cout << _name << " executed " << form.getName() << std::endl;
+        std::cout << _name << " executed " << form.getName () << std::endl;
     } catch (AForm::UnsignedFormException& e) {
         std::cout << _name << " couldn't execute form " << form.getName ();
         std::cout << " because the form is unsigned." << std::endl;

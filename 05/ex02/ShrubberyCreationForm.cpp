@@ -13,9 +13,9 @@ ShrubberyCreationForm::ShrubberyCreationForm (const ShrubberyCreationForm& other
 : AForm (other), _target_form (other._target_form) {
 }
 
-ShrubberyCreationForm ShrubberyCreationForm::operator= (const ShrubberyCreationForm& other) {
-    if (this != &other) {
-    }
+ShrubberyCreationForm& ShrubberyCreationForm::operator= (const ShrubberyCreationForm& other) {
+    if (this != &other)
+        AForm::operator= (other);
     return *this;
 }
 
@@ -26,7 +26,7 @@ void ShrubberyCreationForm::execute (Bureaucrat const& executor) const {
     AForm::execute (executor);
     std::ofstream file ((_target_form + "_shrubbery").c_str ());
     if (!file.is_open ()) {
-		throw ShrubberyCreationForm::CouldNotOpenFileException(); 
+        throw ShrubberyCreationForm::CouldNotOpenFileException ();
     }
 
     file << "                                  # #### ####" << std::endl;

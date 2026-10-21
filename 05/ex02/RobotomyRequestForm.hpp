@@ -5,10 +5,10 @@
 #include <string>
 
 class RobotomyRequestForm : public AForm {
-	public:
+    public:
     RobotomyRequestForm (const std::string& target_form);
     RobotomyRequestForm (const RobotomyRequestForm& other);
-    RobotomyRequestForm operator= (const RobotomyRequestForm& other);
+    RobotomyRequestForm& operator= (const RobotomyRequestForm& other);
     ~RobotomyRequestForm ();
 
     void execute (Bureaucrat const& executor) const;
