@@ -3,9 +3,7 @@
 #include <iostream>
 
 #include "Bureaucrat.hpp"
-#include "PresidentialPardonForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "ShrubberyCreationForm.hpp"
+#include "Intern.hpp"
 
 static void title (const std::string& s) {
     std::cout << "\n===== " << s << " =====" << std::endl;
@@ -13,34 +11,39 @@ static void title (const std::string& s) {
 
 int main (void) {
     std::srand (std::time (NULL));
+
     Bureaucrat boss ("Boss", 1);
-    Bureaucrat mid ("Mid", 140);
-    Bureaucrat intern ("Intern", 150);
+    Intern randomIntern;
+    AForm* form;
 
-    title ("Boss signs and executes every form");
-    ShrubberyCreationForm s ("home");
-    RobotomyRequestForm r ("robotomo");
-    PresidentialPardonForm p ("mcdonald");
-    AForm* forms[] = { &s, &r, &p };
-    for (int i = 0; i < 3; i++) {
-        std::cout << *forms[i] << std::endl;
-        boss.signForm (*forms[i]);
-        boss.executeForm (*forms[i]);
-    }
+    title ("Subjects example");
+    form = randomIntern.makeForm ("robotomy request", "Bender");
+    std::cout << form->getName () << std::endl;
+    delete form;
+    form = randomIntern.makeForm ("shrubbery creation", "target");
+    std::cout << form->getName () << std::endl;
+    delete form;
+    form = randomIntern.makeForm ("presidential pardon", "target");
+    std::cout << form->getName () << std::endl;
+    delete form;
 
-    title ("Execute an unsigned form");
-    PresidentialPardonForm unsigned_p ("harvey");
-    boss.executeForm (unsigned_p);
+    title ("Non-existent form");
+    form = randomIntern.makeForm ("Robotomy Request", "nonexistent_target");
+    delete form;
 
-    title ("Mid (140) can sign Shrubbery (145) but not execute it (137)");
-    ShrubberyCreationForm workshop ("workshop");
-    mid.signForm (workshop);
-    mid.executeForm (workshop);
+    title ("Form is signable and executable");
+    form = randomIntern.makeForm ("robotomy request", "target");
+    boss.signForm (*form);
+    boss.executeForm (*form);
+    delete form;
+    form = randomIntern.makeForm ("shrubbery creation", "target");
+    boss.signForm (*form);
+    boss.executeForm (*form);
+    delete form;
+    form = randomIntern.makeForm ("presidential pardon", "target");
+    boss.signForm (*form);
+    boss.executeForm (*form);
+    delete form;
 
-    title ("Intern (150) cannot sign Presidential (25)");
-    intern.signForm (unsigned_p);
-
-    title ("Robotomy x6: about half should succeed");
-    for (int i = 0; i < 6; i++)
-        boss.executeForm (r);
+    return 0;
 }
