@@ -1,6 +1,6 @@
 .PHONY: all clean fclean re
 
-OBJECTS		:= build/ScalarConverter.o build/main.o build/converters.o
+OBJECTS		:= build/ScalarConverter.o build/main.o
 
 all: convert
 

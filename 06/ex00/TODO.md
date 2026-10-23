@@ -1,13 +1,13 @@
 # CPP06 / ex00 -- TODO
 
 ## getType()
-- [ ] pseudo-litteraux : nan, nanf, +inf, -inf, +inff, -inff -> FLOAT / DOUBLE;
-- [ ] char : 1 charactere non-chiffre, ou 'x'
-- [ ] int : \[signe] chiffres (au moin 1)
-- [ ] float : \[signe] chiffres . chiffres f ( un seul point ,f en dernier )
-- [ ] double : \[signe] chiffres . chiffres ( un seul point )
-- [ ] sinon : ERROR ( aussi chaine vide )
-- [ ] decider : '42.' et '.5' acceptees ou pas ?
+- [x] pseudo-litteraux : nan, nanf, +inf, -inf, +inff, -inff -> FLOAT / DOUBLE;
+- [x] char : 1 charactere non-chiffre, ou 'x'
+- [x] int : \[signe] chiffres (au moin 1)
+- [x] float : \[signe] chiffres . chiffres f ( un seul point ,f en dernier )
+- [x] double : \[signe] chiffres . chiffres ( un seul point )
+- [x] sinon : ERROR ( aussi chaine vide )
+- [x] decider : '42.' et '.5' acceptees ou pas ?
 
 ## conversion vers le type
 - [ ] strtol / strtod -> verifier errno == ERANGE
