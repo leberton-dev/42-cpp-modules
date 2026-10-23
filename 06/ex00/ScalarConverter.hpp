@@ -14,8 +14,4 @@ class ScalarConverter {
     ~ScalarConverter ();
 };
 
-void convertChar (const std::string& literal, size_t len);
-void convertInt(const std::string& literal);
-void convertFloat(const std::string& literal);
-
 #endif
