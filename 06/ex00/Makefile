@@ -1,14 +1,13 @@
 .PHONY: all clean fclean re
 
-HEADERS		:= ScalarConverter.hpp
-OBJECTS		:= build/ScalarConverter.o build/main.o
+OBJECTS		:= build/ScalarConverter.o build/main.o build/converters.o
 
 all: convert
 
 convert: $(OBJECTS)
 	c++ -Wall -Wextra -Werror -std=c++98 $^ -o $@
 
-build/%.o: %.cpp $(HEADERS) | build
+build/%.o: %.cpp ScalarConverter.hpp | build
 	c++ -Wall -Wextra -Werror -std=c++98 -c $< -o $@
 
 build:
