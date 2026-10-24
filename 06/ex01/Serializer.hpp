@@ -7,12 +7,13 @@
 struct Data {
 	uint32_t	status;
 	uint32_t	value;
+	std::string	str;
 };
 
 class Serializer {
     public:
     static uintptr_t serialize (Data* ptr);
-    static Data* unserialize (uintptr_t raw);
+    static Data* deserialize (uintptr_t raw);
 
     private:
     Serializer ();
