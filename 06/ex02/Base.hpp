@@ -4,11 +4,14 @@
 class Base {
     public:
     Base ();
-    Base (const Base& other);
-    Base& operator= (const Base& other);
-    ~Base ();
+    virtual ~Base ();
 
     private:
 };
+
+Base* generate (void);
+void identify (Base* p);
+void identify (Base& p);
+
 
 #endif
