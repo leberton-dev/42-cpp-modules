@@ -9,13 +9,13 @@ static void displayData (Data* data) {
     std::cout << ", string: " << data->str << std::endl;
 }
 
-static void checkMatchingAddress(Data data, Data *ptr) {
-    if (ptr == &data)
+static void checkMatchingAddress (Data* data, Data* ptr) {
+    if (ptr == data)
         displayData (ptr);
     else {
         std::cout << "The addresses do not match" << std::endl;
     }
-    std::cout << "Address of data = " << static_cast<void*> (&data) << std::endl;
+    std::cout << "Address of data = " << static_cast<void*> (data) << std::endl;
     std::cout << "Address of ptr = " << static_cast<void*> (ptr) << std::endl;
 }
 
@@ -25,10 +25,10 @@ int main (void) {
 
     uintptr_t raw = Serializer::serialize (&data);
     Data* ptr     = Serializer::deserialize (raw);
-	checkMatchingAddress(data, ptr);
+    checkMatchingAddress (&data, ptr);
 
-	ptr = NULL;
-	checkMatchingAddress(data, ptr);
+    ptr = NULL;
+    checkMatchingAddress (&data, ptr);
 
-	return 0;
+    return 0;
 }
