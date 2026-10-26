@@ -4,7 +4,7 @@ OBJS	:= build/main.o build/Serializer.o
 
 all: prog
 
-prog: $(OBJS) Serializer.hpp
+prog: $(OBJS)
 	c++ -Wall -Wextra -Werror -std=c++98 $^ -o prog
 
 build/%.o: %.cpp Serializer.hpp | build
